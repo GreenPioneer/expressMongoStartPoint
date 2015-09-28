@@ -1,9 +1,9 @@
-# Mean Blog
+# expressMongoStartPoint
 
 Created by ![Green Pioneer](http://greenpioneersolutions.com/img/icons/apple-icon-180x180.png)
 
 ## Info
-Currently this is just meant as a example. This example is really great for people wanting to learn how to write CRUD functionality with Mongoose & Express . Please take a look around and enjoy the code courtesy of [Green Pioneer](http://www.greenpioneersolutions.com)
+Currently this is just meant as a example to work with starting from the ground up. We have layed out most of the design with you need to fill in the core logic to hook up to the frontend. Please take a look around and enjoy the code courtesy of [Green Pioneer](http://www.greenpioneersolutions.com)
 
 ##Commands
 
