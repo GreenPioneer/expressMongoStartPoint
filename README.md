@@ -38,25 +38,11 @@ mongoose.connect('mongodb://localhost/blog');
 Mongoose Schema:
 ``` javascript
 var blogSchema = mongoose.Schema({
-    created: {
-        type: Date,
-        default: Date.now
-    },
-    title: {
+    example: {
         type: String,
         required: true,
         trim: true
-    },
-    content: {
-        type: String,
-        required: true,
-        trim: true
-    },
-    author: {
-        type: String,
-        required: true,
-        trim: true
-    },
+    }
 });
 var Blog = mongoose.model('Blog', blogSchema)
 ```
@@ -81,36 +67,24 @@ app.delete('/blogs/:id', function(req, res) {
 
 Using Mongoose
 ```javascript
-app.get('/', function(req, res) {
-    res.sendFile('public/index.html', {
-        root: __dirname
-    });
-});
-app.post('/blogs', function(req, res) {
-    var blog = new Blog({
-        author: req.body.author,
-        content: req.body.content,
-        title: req.body.title
-    });
-
+//Mongoose Methods
+var blog = new Blog({author: req.body.author});
     blog.save()
-})
-app.get('/blogs', function(req, res) {
     Blog.find()
-        .exec()
-})
-app.get('/blogs/:id', function(req, res) {
-    Blog.findOne({
-            _id: req.params.id
-        })
-        .exec()
-})
-app.put('/blogs/:id', function(req, res) {
-    Blog.findOneAndUpdate()
-})
-app.delete('/blogs/:id', function(req, res) {
+    Blog.findOne()
+    Blog.findOneAndUpdate() 
     Blog.findOneAndRemove()
-})
+//Express Methods
+    res.sendStatus(400);
+    res.status(201).send(blog);
+    res.json()
+    res.jsonp()
+    res.location()
+//express route Data
+    req.body
+    req.params
+    req.query
+
 ```
 
 
